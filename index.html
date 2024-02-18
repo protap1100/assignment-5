@@ -102,7 +102,7 @@
     <main class="inter-font container mx-auto">
       <!-- Banner Section Started -->
       <section class="mt-10 text-white px-5">
-        <div class="bg-banner bg-cover bg-center h-[70vh] rounded-xl flex flex-col gap-5 text-center items-center justify-center">
+        <div class="bg-banner bg-cover bg-center h-[70vh] rounded-xl flex lg:flex-row flex-col gap-5 text-center items-center justify-center">
           <h1 class="text-6xl raleway-font font-bold">
             End-to-End Travel with
           </h1>
@@ -118,19 +118,19 @@
       </section>
       <!-- Banner Section Ended -->
       <!-- Coupon Section Started -->
-      <section class="mt-10 ">
+      <section class="mt-10">
         <h1 class="text-center text-4xl font-bold"> Best Offers for You</h1>
         <div class="mt-10 flex-col lg:flex-row flex gap-4 lg:gap-20 items-center justify-center">
             <div class="flex">
                 <div class="bg-coupon-1 flex rounded-xl">
-                    <div class="p-4 py-20 lg:p-20">
+                    <div class="p-4 py-16 lg:p-20">
                         <h1 class="text-2xl font-extrabold">15% OFF</h1>
                         <h1 class="text-xl font-extrabold">On Your Next Purchase</h1>
                         <p>used by january 2024</p>
                     </div>
                     <img src="images/cupon-devider.png" alt="">
-                    <div class="p-4 py-20 lg:p-20 raleway-font">
-                       <h1 class="text-xl font-extrabold">NEW15</h1>
+                    <div class="p-4 py-16 lg:p-20 raleway-font">
+                       <h1 class="text-xl font-extrabold" id="coupon-1">NEW15</h1>
                        <h1>Coupon Code</h1>
                     </div>
                 </div>
@@ -144,7 +144,7 @@
                     </div>
                     <img src="images/cupon-devider.png" alt="">
                     <div class="p-4 py-20 lg:p-20 raleway-font">
-                       <h1 class="text-2xl font-extrabold">Couple 20</h1>
+                       <h1 class="text-2xl font-extrabold" id="coupon-2">Couple 20</h1>
                        <h1>Coupon Code</h1>
                     </div>
                 </div>
@@ -164,9 +164,9 @@
             <p class="mt-5 px-3 lg:px-96">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined </p>
         </div>
 
-        <div class="mt-10 flex flex-col lg:flex-row gap-10 justify-between">
-            <div class="flex flex-col flex-grow">
-                <div class="flex items-start justify-between">
+        <div class="mt-10 flex flex-col lg:flex-row gap-10  items-center  justify-between">
+            <div class="flex flex-col flex-grow ">
+                <div class="flex lg:flex-row flex-col  justify-between">
                     <!-- Bus -->
                     <div class="flex gap-5 justify-center items-center">
                         <img src="images/bus-logo.png" alt="">
@@ -176,9 +176,9 @@
                         </div>
                     </div>
                     <!-- Seat -->
-                    <div class="flex p-2 rounded-xl items-center justify-center bg-white border border-primary-green mt-10 font-bold text-primary-green">
+                    <div class="flex p-2 rounded-xl items-center text-center justify-center bg-white border border-primary-green mt-10 font-bold text-primary-green">
                         <img src="images/seat-green.png" alt="">
-                        <h1>40 Seats Left</h1>
+                        <h1><span id="seats-left">40</span> Seats Left</h1>
                     </div>
                 </div>
 
@@ -204,7 +204,7 @@
                 <div class="border-dashed border-2 border-gray-500 hidden lg:block">
                     <img src="images/info-devider.png" alt="">
                 </div>
-                <div class="flex flex-col justify-center items-center">
+                <div class="flex  flex-col justify-center items-center text-center ">
                     <img src="images/fare.png" alt="">
                     <h1 class="text-3xl font-bold raleway-font">550 Taka</h1>
                     <p class="text-2xl" >Per Seat</p>
@@ -216,7 +216,7 @@
 
       <!-- Seat Selection Section Started -->
       <section class="mt-10" id="tickets">
-        <div class="flex gap-10">
+        <div class="flex gap-10 lg:flex-row flex-col lg:px-0 px-4">
           <div class="flex-grow">
             <h1 class="text-3xl font-bold">Select Your Seat</h1>
             <div class="mt-5 border-dashed border border-gray-500"></div>
@@ -235,9 +235,9 @@
               <h1 class="bg-gray-300 px-10 rounded-xl py-3 w-28 "><img src="images/wheel.png" alt=""></h1>
             </div>
             <!-- Seat div -->
-            <div class="mt-10">
-              <div class="flex flex-col gap-10 justify-center">
-                <div class="flex gap-20 items-center ">
+            <div class="mt-10 lg:px-0 pr-4">
+              <div class="flex flex-col gap-5 lg:gap-10 justify-center">
+                <div class="flex gap-10 flex-col lg:flex-row lg:gap-20 items-center ">
                   <h1>A</h1>
                     <div class="flex gap-10">
                       <h1 class=" seat cursor-pointer   px-10 py-3 bg-slate-200 rounded-xl">A1</h1>
@@ -248,7 +248,7 @@
                       <h1 class=" seat cursor-pointer   px-10 py-3 bg-slate-200 rounded-xl">A4</h1>
                     </div>
                 </div>
-                <div class="flex gap-20 items-center ">
+                <div class="flex flex-col lg:flex-row gap-10 lg:gap-20 items-center ">
                   <h1>B</h1>
                     <div class="flex gap-10">
                       <h1 class=" seat cursor-pointer   px-10 py-3 bg-slate-200 rounded-xl">B1</h1>
@@ -259,7 +259,7 @@
                       <h1 class=" seat cursor-pointer   px-10 py-3 bg-slate-200 rounded-xl">B4</h1>
                     </div>
                 </div>
-                <div class="flex gap-20 items-center ">
+                <div class="flex gap-10 flex-col lg:flex-row lg:gap-20 items-center ">
                   <h1>C</h1>
                     <div class="flex gap-10">
                       <h1 class=" seat cursor-pointer   px-10 py-3 bg-slate-200 rounded-xl">C1</h1>
@@ -270,7 +270,7 @@
                       <h1 class=" seat cursor-pointer   px-10 py-3 bg-slate-200 rounded-xl">C4</h1>
                     </div>
                 </div>
-                <div class="flex gap-20 items-center ">
+                <div class="flex gap-10 flex-col lg:flex-row lg:gap-20 items-center ">
                   <h1>D</h1>
                     <div class="flex gap-10">
                       <h1 class=" seat cursor-pointer   px-10 py-3 bg-slate-200 rounded-xl">D1</h1>
@@ -281,7 +281,7 @@
                       <h1 class=" seat cursor-pointer   px-10 py-3 bg-slate-200 rounded-xl">D4</h1>
                     </div>
                 </div>
-                <div class="flex gap-20 items-center ">
+                <div class="flex gap-10 flex-col lg:flex-row lg:gap-20 items-center ">
                   <h1>E</h1>
                     <div class="flex gap-10">
                       <h1 class=" seat cursor-pointer   px-10 py-3 bg-slate-200 rounded-xl">E1</h1>
@@ -292,7 +292,7 @@
                       <h1 class=" seat cursor-pointer   px-10 py-3 bg-slate-200 rounded-xl">E4</h1>
                     </div>
                 </div>
-                <div class="flex gap-20 items-center ">
+                <div class="flex gap-10 flex-col lg:flex-row lg:gap-20 items-center ">
                   <h1>F</h1>
                     <div class="flex gap-10">
                       <h1 class=" seat cursor-pointer   px-10 py-3 bg-slate-200 rounded-xl">F1</h1>
@@ -303,7 +303,7 @@
                       <h1 class=" seat cursor-pointer   px-10 py-3 bg-slate-200 rounded-xl">F4</h1>
                     </div>
                 </div>
-                <div class="flex gap-20 items-center ">
+                <div class="flex gap-10 flex-col lg:flex-row lg:gap-20 items-center ">
                   <h1>G</h1>
                     <div class="flex gap-10">
                       <h1 class=" seat cursor-pointer   px-10 py-3 bg-slate-200 rounded-xl">G1</h1>
@@ -314,7 +314,7 @@
                       <h1 class=" seat cursor-pointer   px-10 py-3 bg-slate-200 rounded-xl">G4</h1>
                     </div>
                 </div>
-                <div class="flex gap-20 items-center ">
+                <div class="flex gap-10 flex-col lg:flex-row lg:gap-20 items-center ">
                   <h1>H</h1>
                     <div class="flex gap-10">
                       <h1 class=" seat cursor-pointer   px-10 py-3 bg-slate-200 rounded-xl">H1</h1>
@@ -325,7 +325,7 @@
                       <h1 class=" seat cursor-pointer   px-10 py-3 bg-slate-200 rounded-xl">H4</h1>
                     </div>
                 </div>
-                <div class="flex gap-20 items-center ">
+                <div class="flex gap-10 flex-col lg:flex-row lg:gap-20 items-center ">
                   <h1>I</h1>
                     <div class="flex gap-10">
                       <h1 class=" seat cursor-pointer   px-10 py-4 bg-slate-200 rounded-xl">I1</h1>
@@ -336,7 +336,7 @@
                       <h1 class=" seat cursor-pointer   px-10 py-4 bg-slate-200 rounded-xl">I4</h1>
                     </div>
                 </div>
-                <div class="flex gap-20 items-center ">
+                <div class="flex gap-10 flex-col lg:flex-row lg:gap-20 items-center ">
                   <h1>I</h1>
                     <div class="flex gap-10">
                       <h1 class=" seat cursor-pointer   px-10 py-4 bg-slate-200 rounded-xl">J1</h1>
@@ -355,29 +355,31 @@
           <div class="flex-grow-1">
             <h1 class="text-3xl font-bold">Select Your Seat </h1>
             <div class="my-10 border-dashed border border-gray-500"></div>
-            <div class="flex gap-40">
-              <h1 class="text-2xl font-bold">Seat<sup class="text-white px-4 rounded bg-primary-green">2</sup></h1>
+            <div class="flex  justify-around gap-20">
+              <h1 class="text-2xl font-bold">Seat<sup class="text-white px-4 rounded bg-primary-green" id="selected-seat">0</sup></h1>
               <h1 class="text-2xl font-bold">Class</h1>
               <h1 class="text-2xl font-bold">Price</h1>
             </div>
             <div class="my-5 border-dashed border border-gray-500"></div>
-            <div class="my-5 flex gap-40">
-              <div id="cart-name" class="text-2xl font-bold"></div>
-              <div id="cart-class" class="text-2xl font-bold"></div>
-              <div id="cart-price" class="text-2xl font-bold"></div>
+            <div class="my-5 flex  justify-around gap-20">
+              <div id="cart-name" class="text-xl font-bold"></div>
+              <div id="cart-class" class="text-xl font-bold"></div>
+              <div id="cart-price" class="text-xl font-bold"></div>
             </div>
             <div class=" border border-gray-500 "></div>
+            <!-- Grand Total -->
             <div class="bg-gray-100 py-10 flex justify-between rounded">
               <h1 class="text-2xl font-bold">Total Price</h1>
-              <h1 class="text-2xl font-bold">BDT 1100</h1>
+              <h1 class="text-2xl font-bold" >BDT <span id="total-price">00</span></h1>
             </div>
             <div class="my-5 flex justify-center">
-              <input class="bg-gray-300 pr-16 py-3 rounded-l pl-2" type="text" placeholder="Apply Coupon">
-              <button class="btn bg-primary-green text-white rounded-l-none">Apply</button>
+              <input class="bg-gray-300 pr-16 py-3 rounded-l pl-2" type="text" id="apply-coupon" placeholder="Apply Coupon">
+              <button class="btn bg-primary-green text-white rounded-l-none" onclick="applyCoupon();" id="applycode">Apply</button>
             </div>
+            <!-- Grand Total -->
             <div class="bg-gray-100 py-10 flex justify-between rounded">
               <h1 class="text-2xl font-bold">Grand Total</h1>
-              <h1 class="text-2xl font-bold">BDT 1100</h1>
+              <h1 class="text-2xl font-bold">BDT <span id="grand-total">00</span></h1>
             </div>
             <div class="mt-10">
                 <h1 class="text-2xl font-bold">Passenger Name*</h1>
@@ -397,9 +399,9 @@
       </section>
       <!-- Seat Selection Section Ended -->
     </main>
-    <footer class=" mt-40 p-10 bg-[#030712] text-neutral-content">
-      <div class="px-32">
-        <div class=" flex justify-between">
+    <footer class="mt-40 p-10 bg-[#030712] text-neutral-content">
+      <div class=" px-3 lg:px-32 text-center">
+        <div class="flex flex-col lg:flex-row justify-between">
           <div class="w-80">
             <p class="text-3xl font-bold">P-Ticket</p>
             <p class="mt-6">P-Ticket is a digital platform to make your daily commuting better.</p>
@@ -418,11 +420,11 @@
           </div>
         </div>
         <div class="my-10 border-dashed border border-gray-300"></div>
-        <div class="flex justify-between">
+        <div class="flex flex-col lg:flex-row justify-between">
           <div>
             <h1>@all rights reserved, P-Ticket services limited.2024</h1>
           </div>
-          <div class="flex gap-10">
+          <div class="flex flex-col lg:flex-row gap-10">
             <h1>Terms & condition</h1>
             <h1>Return & refund policy</h1>
             <h1>Privacy policy</h1>
