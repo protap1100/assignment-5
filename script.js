@@ -62,39 +62,35 @@ for (const selectSeat of selectSeats) {
         alert("You can only select up to 4 seats");
       }
     } else {
-      selectSeat.classList.remove("selected");
-      selectSeat.style.backgroundColor = "";
-
-    //   const removedWithoutDiscount = withoutDiscount;
-    //   withoutDiscount -= removedWithoutDiscount;
-    //   grandTotal.innerText = withoutDiscount;
-
-      // Selecting appending tag  
-      const cartElements = cartName.getElementsByTagName("p");
-      setSelected.innerText = --seats;
-      
-      const remainingSeats = ++totalSets;
-      displayRemainingSeats.innerHTML = remainingSeats;
-
-      for (let i = 0; i < cartElements.length; i++) {
-        if (cartElements[i].textContent === selectSeat.innerText) {
-          const removedPrice = parseInt(cartPrice.children[i].innerText);
-          
-          totalPrice -= removedPrice;  
-          totalDisplay.innerText = totalPrice;  
-
-          cartElements[i].remove();
-          cartPrice.removeChild(cartPrice.children[i]);
-          cartType.removeChild(cartType.children[i]);
-
-        //   const newGrandTotal = withoutDiscount - totalPrice;
-        //   grandTotal.innerText = newGrandTotal;
-          break;
-        } 
+        selectSeat.classList.remove("selected");
+        selectSeat.style.backgroundColor = "";
+  
+        const cartElements = cartName.getElementsByTagName("p");
+        setSelected.innerText = --seats;
+  
+        const remainingSeats = ++totalSets;
+        displayRemainingSeats.innerHTML = remainingSeats;
+  
+        for (let i = 0; i < cartElements.length; i++) {
+          if (cartElements[i].textContent === selectSeat.innerText) {
+            const removedPrice = parseInt(cartPrice.children[i].innerText);
+  
+            totalPrice -= removedPrice;
+            totalDisplay.innerText = totalPrice;
+  
+            withoutDiscount -= removedPrice;  
+            grandTotal.innerText = withoutDiscount;
+  
+            cartElements[i].remove();
+            cartPrice.removeChild(cartPrice.children[i]);
+            cartType.removeChild(cartType.children[i]);
+  
+            break;
+          }
+        }
       }
-    }
-  });
-}
+    });
+  }
 
 function applyCoupon(){
     const getCouponValueById = document.getElementById('apply-coupon').value;
