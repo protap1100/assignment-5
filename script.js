@@ -10,6 +10,7 @@ const grandTotal = document.getElementById('grand-total');
 
 
 
+
 let seats = 0;
 let totalPrice = 0;
 let totalSets = 0;
@@ -64,9 +65,9 @@ for (const selectSeat of selectSeats) {
       selectSeat.classList.remove("selected");
       selectSeat.style.backgroundColor = "";
 
-      const removedWithoutDiscount = withoutDiscount;
-      withoutDiscount -= removedWithoutDiscount;
-      grandTotal.innerText = withoutDiscount;
+    //   const removedWithoutDiscount = withoutDiscount;
+    //   withoutDiscount -= removedWithoutDiscount;
+    //   grandTotal.innerText = withoutDiscount;
 
       // Selecting appending tag  
       const cartElements = cartName.getElementsByTagName("p");
@@ -79,15 +80,15 @@ for (const selectSeat of selectSeats) {
         if (cartElements[i].textContent === selectSeat.innerText) {
           const removedPrice = parseInt(cartPrice.children[i].innerText);
           
-          totalPrice = removedPrice;  
+          totalPrice -= removedPrice;  
           totalDisplay.innerText = totalPrice;  
 
           cartElements[i].remove();
           cartPrice.removeChild(cartPrice.children[i]);
           cartType.removeChild(cartType.children[i]);
 
-          const newGrandTotal = withoutDiscount - totalPrice;
-          grandTotal.innerText = newGrandTotal;
+        //   const newGrandTotal = withoutDiscount - totalPrice;
+        //   grandTotal.innerText = newGrandTotal;
           break;
         } 
       }
@@ -105,12 +106,24 @@ function applyCoupon(){
         const totalDiscount = totalPrice * 15 / 100;
         const grandTotal2 = withoutDiscount - totalDiscount;
         grandTotal.innerText = grandTotal2;
+        // Showing Discount 
+        const discount = document.getElementById('discount');
+        const p = document.createElement('p');
+        p.innerText="15% Discount " +"Total:" + totalDiscount.toFixed(2) + 'Taka';
+        discount.appendChild(p);
         console.log(grandTotal2);
     }else if( getCouponValueById === couponTwo){
         const totalDiscount = totalPrice * 20 / 100;
         const grandTotal2 = withoutDiscount - totalDiscount;
         grandTotal.innerText = grandTotal2;
+
+        // Showing Discount
+        const discount = document.getElementById('discount');
+        const p = document.createElement('p');
+        p.innerText="20% Discount " + "Total:" + totalDiscount.toFixed(2) + 'Taka';
+        discount.appendChild(p);
         console.log(grandTotal2);
+       
     }
     else{
         console.log('Invalid Coupon');
