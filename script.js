@@ -53,10 +53,12 @@ for (const selectSeat of selectSeats) {
         const remainingSeats = --totalSets;
         displayRemainingSeats.innerHTML = remainingSeats;
 
+
+        const disableButton = document.getElementById("applycode");
         // Apply Coupon Validation Function
         if (seats == 4) {
           const applyCoupon2 = document.getElementById("apply-coupon");
-          const disableButton = document.getElementById("applycode");
+          
           disableButton.removeAttribute("disabled");
           applyCoupon2.addEventListener("keyup", function (event) {
             const text = event.target.value;
@@ -68,6 +70,8 @@ for (const selectSeat of selectSeats) {
               disableButton.removeAttribute("disabled");
             }
           });
+        }else if(seats < 4){
+          disableButton.setAttribute("disabled",true);
         }
       } else {
         alert("You can only select up to 4 seats");
@@ -95,7 +99,6 @@ for (const selectSeat of selectSeats) {
           cartElements[i].remove();
           cartPrice.removeChild(cartPrice.children[i]);
           cartType.removeChild(cartType.children[i]);
-
           break;
         }
       }
@@ -155,12 +158,12 @@ for (const inputValues of inputValue) {
     const text = event.target.value;
 
     const isNameValid = typeof name === "string" && name.trim() !== "";
-
     const isPhoneNumber = !isNaN(Number(phone)) && phone.trim() !== "";
 
     if (isNameValid && isPhoneNumber) {
       modal.removeAttribute("disabled");
     } else {
+      modal.setAttribute("disabled", "true");
     }
   });
 }
