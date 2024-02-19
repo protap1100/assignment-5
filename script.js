@@ -1,5 +1,4 @@
 const selectSeats = document.querySelectorAll(".seat");
-// Selecting appending class by id 
 const cartName = document.getElementById("cart-name");
 const cartPrice = document.getElementById("cart-price");
 const cartType = document.getElementById("cart-class");
@@ -7,8 +6,6 @@ const setSelected = document.getElementById('selected-seat');
 const totalDisplay = document.getElementById('total-price');
 const displayRemainingSeats = document.getElementById('seats-left');
 const grandTotal = document.getElementById('grand-total');
-
-
 
 
 let seats = 0;
@@ -19,6 +16,7 @@ let withoutDiscount = 0;
 for (const selectSeat of selectSeats) {
 
   totalSets++; 
+
   selectSeat.addEventListener("click", function () {
     if (!selectSeat.classList.contains("selected")) {
       if (seats < 4) {
@@ -92,38 +90,98 @@ for (const selectSeat of selectSeats) {
     });
   }
 
+// Apply Coupon Function
+const applyCoupon2 = document.getElementById('apply-coupon');
+applyCoupon2.addEventListener('keyup',function(event){
+  const text = event.target.value;
+  // console.log(text);
+  const disableButton =document.getElementById('applycode');
+  const coupon1 = document.getElementById('coupon-1').innerText;
+  const coupon2 = document.getElementById('coupon-2').innerText;
+
+  // Checking if Coupon Code Matched or Not
+  if(text === coupon1 || text === coupon2){
+    disableButton.removeAttribute('disabled');
+  }else{
+    disableButton.setAttribute('disabled', true);
+  }
+
+});
+
 function applyCoupon(){
-    const getCouponValueById = document.getElementById('apply-coupon').value;
+  const getCouponValueById = document.getElementById('apply-coupon').value;
 
-    const couponOne = document.getElementById('coupon-1').innerText;
-    const couponTwo = document.getElementById('coupon-2').innerText;
-    
-    if(getCouponValueById === couponOne){
-        const totalDiscount = totalPrice * 15 / 100;
-        const grandTotal2 = withoutDiscount - totalDiscount;
-        grandTotal.innerText = grandTotal2;
-        // Showing Discount 
-        const discount = document.getElementById('discount');
-        const p = document.createElement('p');
-        p.innerText="15% Discount " +"Total:" + totalDiscount.toFixed(2) + 'Taka';
-        discount.appendChild(p);
-        console.log(grandTotal2);
-    }else if( getCouponValueById === couponTwo){
-        const totalDiscount = totalPrice * 20 / 100;
-        const grandTotal2 = withoutDiscount - totalDiscount;
-        grandTotal.innerText = grandTotal2;
+  const couponOne = document.getElementById('coupon-1').innerText;
+  const couponTwo = document.getElementById('coupon-2').innerText;
 
-        // Showing Discount
-        const discount = document.getElementById('discount');
-        const p = document.createElement('p');
-        p.innerText="20% Discount " + "Total:" + totalDiscount.toFixed(2) + 'Taka';
-        discount.appendChild(p);
-        console.log(grandTotal2);
-       
-    }
-    else{
-        console.log('Invalid Coupon');
-        document.getElementById('applycode').disabled = true;
-    }
+  if(getCouponValueById === couponOne){
+
+      const totalDiscount = totalPrice * 15 / 100;
+      const grandTotal2 = withoutDiscount - totalDiscount;
+      grandTotal.innerText = grandTotal2;
+      // Showing Discount 
+      const discount = document.getElementById('discount');
+      const p = document.createElement('p');
+      p.innerText="15% Discount " +"Total:" + totalDiscount.toFixed(2) + 'Taka';
+      discount.appendChild(p);
+      console.log(grandTotal2);
+  }else if( getCouponValueById === couponTwo){
+      const totalDiscount = totalPrice * 20 / 100;
+      const grandTotal2 = withoutDiscount - totalDiscount;
+      grandTotal.innerText = grandTotal2;
+
+      // Showing Discount
+      const discount = document.getElementById('discount');
+      const p = document.createElement('p');
+      p.innerText="20% Discount " + "Total:" + totalDiscount.toFixed(2) + 'Taka';
+      discount.appendChild(p);
+      console.log(grandTotal2);
+  }
+  else{
+      console.log('Invalid Coupon');
+      document.getElementById('applycode').disabled = true;
+  }
 
 }
+
+function handleOnClick(){
+  my_modal_5.showModal();
+} 
+
+// validation
+
+
+  const inputValue = document.querySelectorAll('.input-val');
+  const modal = document.getElementById('modal');
+
+  for(const inputValues of inputValue){
+      inputValues.addEventListener('keyup',function(event){
+
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const text = event.target.value;
+
+          const isNameValid = typeof name === 'string' && name.trim() !== '';
+          
+          const isPhoneNumber = !isNaN(Number(phone)) && phone.trim() !== '';
+
+      if( isNameValid && isPhoneNumber){
+        modal.removeAttribute('disabled');
+      }else{
+        
+      }
+    });
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
